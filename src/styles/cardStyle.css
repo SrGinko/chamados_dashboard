@@ -1,0 +1,366 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+    padding: 16px;
+    overflow: auto;
+    max-height: calc(100vh - 175px);
+}
+
+.cardContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 240px;
+}
+
+.emptyState {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.incident-card {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.incident-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.status-low {
+    border-left: 4px solid #22c55e;
+}
+
+.status-medium {
+    border-left: 4px solid #eab308;
+}
+
+.status-high {
+    border-left: 4px solid #f97316;
+}
+
+.status-critical {
+    border-left: 4px solid #ef4444;
+}
+
+.status-disaster {
+    border-left: 4px solid #a855f7;
+}
+
+/* HEADER */
+.incident-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.incident-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.incident-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+.incidentTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.incidentTag {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    color: #d9d9d9;
+    font-size: 11px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* BADGE */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+    display: flex;
+}
+
+/* cores badge */
+.status-low.status-badge {
+    background: #22c55e26;
+    color: #22c55e;
+}
+
+.status-medium.status-badge {
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+}
+
+.status-high.status-badge {
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+}
+
+.status-critical.status-badge {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.status-disaster.status-badge {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+}
+
+/* DESCRIPTION */
+.incident-description {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 12px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+.incident-footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    font-size: 12px;
+    color: #aaa;
+    align-items: center;
+}
+
+.incident-footer span {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.clusterGroup {
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #131313;
+  flex-shrink: 0;
+}
+
+.clusterGroup::-webkit-scrollbar {
+    width: 8px;
+}
+
+.clusterGroup::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.clusterGroup::-webkit-scrollbar-thumb {
+    background-color: #141414;
+    border-radius: 10px;
+}
+
+.clusterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: left;
+  box-sizing: border-box;
+  transition: background 0.2s ease-in;
+}
+
+.clusterHeader:hover {
+  background: #333;
+}
+
+.clusterHeaderInfo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.clusterTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+.clusterCount {
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  white-space: nowrap;
+}
+
+.clusterChevron {
+  flex-shrink: 0;
+  color: #aaa;
+  transition: transform 0.3s ease;
+}
+
+.clusterChevron.expanded {
+  transform: rotate(180deg);
+}
+
+.clusterCollapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.clusterCollapsible.expanded {
+  grid-template-rows: 1fr;
+}
+
+.clusterCollapsibleInner {
+  overflow: hidden;
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.clusterCollapsible.expanded .clusterCollapsibleInner {
+  opacity: 1;
+  min-height: 160px;
+  transition: opacity 0.35s ease 0.05s;
+}
+
+.clusterList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.clusterCollapsible.expanded .clusterList {
+  min-height: 136px;
+}
+
+.incidentHeaderActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.incidentExpandBtn,
+.incidentOpenBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.incidentExpandBtn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}
+
+.incidentOpenBtn {
+    padding: 8px 12px;
+}
+
+.incidentExpandBtn:hover,
+.incidentOpenBtn:hover {
+    background: #272727;
+    transform: scale(1.03);
+}
+
+.incidentChevron {
+    transition: transform 0.25s ease;
+}
+
+.incidentChevron.expanded {
+    transform: rotate(180deg);
+}
+
+.incidentTasks {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease;
+    margin-top: 12px;
+}
+
+.incidentTasks.expanded {
+    grid-template-rows: 1fr;
+}
+
+.incidentTasksInner {
+    overflow: hidden;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #222;
+}
+
+.incidentTaskItem {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #151515;
+    color: #ddd;
+    font-size: 12px;
+}
+
+.incidentTaskId {
+    font-weight: 600;
+    color: #fff;
+}
+
+.incidentTaskMeta {
+    color: #aaa;
+    text-align: right;
+}

@@ -1,0 +1,111 @@
+.customSelect {
+    position: relative;
+    width: 100%;
+}
+
+.selectBox {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectBox:hover {
+    background: #222;
+}
+
+.arrow {
+    transition: transform 0.2s;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+/* DROPDOWN */
+.selectDropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 9999;
+    max-height: 500px;
+}
+
+.selectDropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.selectDropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.selectDropdown::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+/* ITEM */
+.selectItem {
+    padding: 8px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.selectItem:hover {
+    background: #222;
+}
+
+.selectItem.active {
+    background: #333;
+    color: #fff;
+}
+
+.selectItem[data-type="IncidenteNivel1"] {
+    border-left: 1px solid #22c55e
+}
+
+.selectItem[data-type="IncidenteNivel2"] {
+    border-left: 1px solid #eab308
+}
+
+.selectItem[data-type="CriseNivel1"] {
+    border-left: 1px solid  #f97316
+}
+
+.selectItem[data-type="CriseNivel2"] {
+    border-left: 1px solid #ef4444
+}
+
+.selectItem[data-type="Catástofre"] {
+    border-left: 1px solid #a855f7
+}
+
+.optionContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.optionLabel {
+  font-weight: 500;
+}
+
+.optionDescription {
+  font-size: 12px;
+  color: #888;
+}
+
+.selectedDescription {
+  font-size: 12px;
+  color: #aaa;
+  margin-left: 6px;
+}

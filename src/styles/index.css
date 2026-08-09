@@ -1,0 +1,285 @@
+:root {
+    --background: #141414;
+    --text-primary: #E6E6E6;
+    --text-secudary: #A9AAAE;
+    --menuLataral-color: #0f0f0f;
+    --menuContent-color: #1d1d1dfb;
+    --headerBackground: #0f0f0f;
+    --border: #3A3B3F;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text-secudary);
+    overflow: hidden;
+}
+
+iframe{
+    width: 100%;
+    height: calc(100vh - 75px);
+    border: none;
+}
+
+#root {
+    height: 100vh;
+    overflow: hidden;
+}
+.menuController {
+    display: flex;
+    flex-shrink: 0;
+    background-color: var(--headerBackground);
+    gap: 8px;
+    padding: 0px 5px 0px 5px;
+    min-height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-app-region: drag;
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+}
+
+.menuController .btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+
+.btnControllerContainer {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+    height: 25px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.close {
+    background-color: #ff5f57;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #28c840;
+}
+
+.menuLateral {
+    width: 200px;
+    height: calc(100vh - 70px);
+    background-color: var(--menuLataral-color);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.menuItemContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.menuItens {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: left;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 0;
+}
+
+.menuItensText {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menuItens:hover {
+    background-color: #292929;
+}
+
+.appsContentContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+    max-height: 100vh;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.appsContentContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.appsContentContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.appsContentContainer::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+.chamadosPage {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.chamadosTitleContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    background-color: var(--headerBackground);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 10px;
+}
+
+.chamadosClusterActions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chamadosActionBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.chamadosActionBtn:hover {
+    background-color: #3a3a3a;
+}
+
+.chamadosActionBtnPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chamadosActionIconBtn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chamadosActionIconBtn svg {
+    flex-shrink: 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input {
+    border: none;
+    background-color: #292929;
+    color: var(--text-primary);
+}
+
+input:focus {
+    outline: none;
+}
+
+.aviso-container {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  min-width: 260px;
+  max-width: 360px;
+  background: #1f1f1f;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 12px 10px 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  font-family: sans-serif;
+  z-index: 9999;
+}
+
+.aviso-content {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.aviso-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.aviso-progress-bar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: #ffffff;
+  transform-origin: left;
+  animation-name: shrink;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  justify-content: flex-end;
+}
+
+@keyframes shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.loadingContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 50px);
+}
+
+.menuItens.active{
+    background-color: #202020;
+    border-left: 4px solid #bd005e;
+    color: #fff;
+    transition: all 0.3s ease;
+}

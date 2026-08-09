@@ -1,0 +1,428 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    width: 700px;
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+.modalContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modalContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modalContainer::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+/* HEADER */
+.modalHeader {
+    display: flex;
+    background-color: #111;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* BODY GRID */
+.modalBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.modalSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sectionTitle {
+    font-size: 12px;
+    color: #888;
+}
+
+/* INPUT */
+.inputContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a1a;
+    padding: 13px;
+    border-radius: 8px;
+    ;
+}
+
+.inputContainer input,
+.inputContainer select,
+.inputContainer textarea {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    outline: none;
+}
+
+.textarea textarea {
+    height: 120px;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #525252;
+    border-radius: 10px;
+}
+
+.inputContainer:hover {
+    background: #222;
+    cursor: pointer;
+}
+
+/* STATUS */
+.statusBadge {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* CORES */
+.status-IncidenteNivel1 {
+    border-left: 3px solid #22c55e;
+}
+
+.status-IncidenteNivel2 {
+    border-left: 3px solid #eab308;
+}
+
+.status-CriseNivel1 {
+    border-left: 3px solid #f97316;
+}
+
+.status-CriseNivel2 {
+    border-left: 3px solid #ef4444;
+}
+
+.status-Catástofre {
+    border-left: 3px solid #a855f7;
+}
+
+/* ACTIONS */
+.modalActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modalActions div {
+    display: flex;
+    gap: 10px;
+}
+
+.btnModal {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnModal:hover {
+    background-color: #272727;
+    transform: scale(1.06);
+}
+
+.modalLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.iconButton:hover {
+    background: #272727;
+    transform: scale(1.04);
+}
+
+.reportModalContainer {
+    width: min(1100px, calc(100vw - 40px));
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.reportTitleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reportSummary {
+    font-size: 12px;
+    color: #888;
+}
+
+.reportToolbar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.reportToolbarBtn {
+    border: none;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reportToolbarBtn:hover {
+    background: #272727;
+    transform: scale(1.03);
+}
+
+.reportCopyAction {
+    margin-left: auto;
+}
+
+.reportPreview {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reportPreview::-webkit-scrollbar {
+    width: 8px;
+}
+
+.reportPreview::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+.reportTerritorio {
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #131313;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.reportTerritorioHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: none;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 12px 14px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.reportTerritorioHeader:hover {
+    background: #222;
+}
+
+.reportTerritorioName {
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.reportChevron {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.reportChevron.expanded {
+    transform: rotate(180deg);
+}
+
+.reportTerritorioBody {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+}
+
+.reportTerritorioBody.expanded {
+    max-height: 420px;
+}
+
+.reportTerritorioScroll {
+    max-height: 420px;
+    overflow: auto;
+}
+
+.reportTerritorioScroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.reportTerritorioScroll::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+.reportCluster {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.reportClusterHeader {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: #151515;
+    color: #fff;
+    padding: 10px 14px;
+    cursor: pointer;
+    text-align: left;
+    border-top: 1px solid #222;
+}
+
+.reportClusterHeader:hover {
+    background: #202020;
+}
+
+.reportClusterName {
+    font-weight: 600;
+}
+
+.reportClusterCount {
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+}
+
+.reportClusterBody {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    background: #111;
+}
+
+.reportClusterBody.expanded {
+    max-height: 999px;
+}
+
+.reportItem {
+    min-height: 0;
+    overflow: hidden;
+    padding: 10px 14px 12px 28px;
+    border-top: 1px solid #202020;
+}
+
+.reportItemTitle {
+    font-size: 13px;
+    color: #f2f2f2;
+    line-height: 1.35;
+}
+
+.reportItemStatus {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #bfbfbf;
+}
+
+.reportEmptyState {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #888;
+}
+
+.modalImportBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    background: #151515;
+    margin-bottom: 14px;
+}
+
+.modalImportBar strong {
+    color: #fff;
+}
+
+.modalImportHint {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #9b9b9b;
+}
+
+.modalImportBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}

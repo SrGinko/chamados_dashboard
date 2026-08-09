@@ -1,0 +1,60 @@
+{
+  "name": "dashboard-chamados",
+  "version": "1.5.0",
+  "private": true,
+  "main": "dist-electron/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "concurrently \"vite\" \"wait-on http://localhost:5174 && npm run electron:dev\"",
+    "electron:dev": "npm run build:electron && electron . --dev",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.json",
+    "build": "npm run build:renderer && npm run build:electron",
+    "dist": "npm run build && electron-builder"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "electron": "^26.6.10",
+    "electron-builder": "^26.7.0",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "lucide-react": "^0.555.0",
+    "openai": "^6.33.0",
+    "playwright": "^1.60.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "react-spinners": "^0.17.0",
+    "socket.io-client": "^4.8.3",
+    "ws": "^8.21.3"
+  },
+  "build": {
+    "appId": "com.monteiroapps.dashboard",
+    "productName": "Vero Dashboard",
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "../src/assets/veroIcon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
