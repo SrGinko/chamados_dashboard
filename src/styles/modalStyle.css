@@ -80,11 +80,12 @@
     color: #fff;
     width: 100%;
     outline: none;
+    resize: none;
 }
 
-.textarea textarea {
-    height: 120px;
+.inputContainer textarea {
     resize: none;
+    height: 120px;
 }
 
 textarea::-webkit-scrollbar {

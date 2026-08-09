@@ -222,9 +222,6 @@ export default function Chamados({
                                                                 {tasks.map((task) => (
                                                                     <div key={task.idTask} className="incidentTaskItem">
                                                                         <div className="incidentTaskId">TASK: {task.idTask}</div>
-                                                                        <div className="incidentTaskMeta">
-                                                                            {task.escalation || "Sem escalation"}
-                                                                        </div>
                                                                     </div>
                                                                 ))}
                                                             </div>

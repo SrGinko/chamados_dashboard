@@ -155,23 +155,22 @@ export default function modalChamadoComponent({ id, open, onClose, type, onSave 
 
                             <div className="modalSection">
                                 <span className="sectionTitle">Informações</span>
-
-                                <span>Descrição:</span>
-                                <div className="inputContainer">
-                                    <Captions size={16} />
-                                    <input
-                                        type="text"
-                                        value={descricao}
-                                        onChange={(e) => setDescricao(e.target.value)}
-                                    />
-                                </div>
-
                                 <span>Classificação:</span>
                                 <CustomSelect
                                     options={classificacaoOptions}
                                     value={classificacao}
                                     onChange={setClassificacao}
                                 />
+                                <span>Descrição:</span>
+                                <div className="inputContainer">
+                                    <textarea
+                                        className="textarea"
+                                        value={descricao}
+                                        onChange={e => {
+                                            setDescricao(e.target.value)
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
 

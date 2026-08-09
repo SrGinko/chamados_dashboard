@@ -142,19 +142,6 @@ export default function AddChamadoModa({ open, onClose, onSaved }: Props) {
                                 </div>
                             </div>
                             <div className="modalSection">
-                                <span className="sectionTitle">Informações</span>
-                                <span>Descrição:</span>
-                                <div className="inputContainer">
-                                    <Captions size={16} />
-                                    <input
-                                        type="text"
-                                        value={descricao}
-                                        onChange={e => {
-                                            setDescricao(e.target.value)
-                                        }}
-                                    />
-                                </div>
-
                                 <span>Status:</span>
                                 <CustomSelect
                                     options={[
@@ -167,6 +154,17 @@ export default function AddChamadoModa({ open, onClose, onSaved }: Props) {
                                     value={classificacao}
                                     onChange={setClassificacao}
                                 />
+                                <span className="sectionTitle">Informações</span>
+                                <span>Descrição:</span>
+                                <div className="inputContainer">
+                                    <textarea
+                                        value={descricao}
+                                        onChange={e => {
+                                            setDescricao(e.target.value)
+                                        }}
+                                    />
+                                </div>
+
                             </div>
                         </div>
 
